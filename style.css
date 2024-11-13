@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: "Rubik", sans-serif;
   background-color: hsl(226, 43%, 10%);
   color: white;
   font-size: 18px;
@@ -21,27 +22,66 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 887px;
   height: 414px;
 }
-
+/* 
 .grid-reverse {
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
   border-radius: 13px;
   display: flex;
-  flex-direction: column-reverse;
-}
+  align-items: flex-end; */
+/* flex-direction: column-reverse; */
+/* } */
 
 .title-dots {
-  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.dots-image {
+  margin-top: 5px;
+  height: 5px;
+  width: 20px;
+}
+
+.hours-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .small-textbox {
   background-color: hsl(235, 46%, 20%);
   padding: 15px;
+  gap: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  /* justify-content: space-between;
+  align-items: baseline; */
+  /* display: flex; */
+  flex-direction: column;
+  /*  */
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.current-hours {
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.previous-hours {
+  opacity: 0.7;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .profile-name {
@@ -49,7 +89,8 @@ body {
   grid-column: 1 / 1;
   background-color: hsl(235, 46%, 20%);
   max-width: 203px;
-  max-height: 600px;
+  max-height: 415px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +99,7 @@ body {
 }
 
 .profile-dates {
+  gap: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,75 +121,147 @@ body {
   margin-bottom: 50px;
 }
 
+.para {
+  opacity: 0.7;
+  font-size: 18px;
+}
+
 h3 {
+  font-weight: 300;
+  font-size: 40px;
   width: 50px;
 }
 
+#img-icon {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+  width: 30px;
+  background-position: right 5% top 0;
+}
+
+#img-icon path {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 300px;
+}
+
 .work-bck {
-  /* display: flex;
-  flex-direction: column-reverse; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -10px;
+  background-size: 60px;
   background-color: hsl(15, 100%, 70%);
   width: 204px;
   height: 195px;
+  border-radius: 10px;
+
+  /* overflow: hidden; */
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .work {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
 .play-bck {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -10px;
+  background-size: 60px;
   background-color: hsl(195, 74%, 62%);
   width: 204px;
   height: 195px;
+  border-radius: 10px;
 }
 
 .play {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
 .study-bck {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -5px;
+  background-size: 60px;
   width: 204px;
   height: 195px;
+  border-radius: 10px;
   background-color: hsl(348, 100%, 68%);
 }
 
 .study {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
 .exercise-bck {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -5px;
+  background-size: 60px;
   width: 204px;
   height: 195px;
   background-color: hsl(145, 58%, 55%);
+  border-radius: 10px;
 }
 
 .exercise {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
 .social-bck {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -5px;
+  background-size: 60px;
   width: 204px;
   height: 195px;
   background-color: hsl(264, 64%, 52%);
+  border-radius: 10px;
 }
 
 .social {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
 .selfcare-bck {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: url(images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px top -5px;
+  background-size: 60px;
   width: 204px;
   height: 195px;
   background-color: hsl(43, 84%, 65%);
+  border-radius: 10px;
 }
 
 .selfcare {
-  border-radius: 10px;
+  border-radius: 7px;
   height: 159px;
 }
 
@@ -157,10 +271,11 @@ h3 {
   cursor: pointer;
   padding: 8px 16px;
   text-align: center;
-  width: 80%; /* Adjust width as needed */
+  width: 80%;
+  height: 195px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
 }
 
 .button > * {
@@ -170,17 +285,81 @@ h3 {
   cursor: pointer;
   margin-top: 5px;
   text-align: start;
-  width: 80%; /* Adjust width as needed */
+  width: 80%;
+  padding: 8px 16px;
 }
-
-/*  */
 
 @media only screen and (max-width: 375px) {
   .grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    width: 100%;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .profile-name {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .button {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .work-bck,
+  .play-bck,
+  .study-bck,
+  .exercise-bck,
+  .social-bck,
+  .selfcare-bck {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .small-textbox {
+    padding: 0;
+  }
+
+  .title-dots {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .work-bck,
+  .play-bck,
+  .study-bck,
+  .exercise-bck,
+  .social-bck,
+  .selfcare-bck {
+    background-position: right 10px top 10px;
+    background-size: 70px;
+  }
+
+  .activity-title {
+    font-size: 1.2em;
+  }
+
+  .current-hours {
+    font-size: 2em;
+  }
+
+  .previous-hours {
+    font-size: 0.9em;
   }
 }

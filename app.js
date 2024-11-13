@@ -79,6 +79,7 @@ function displayData(timeFrame) {
     const titleDots = document.createElement("div");
     titleDots.classList.add("title-dots");
     dots.src = "./images/icon-ellipsis.svg";
+    dots.classList.add("dots-image");
     title.textContent = activity.title;
     title.classList.add("activity-title");
     titleDots.append(title, dots);
@@ -91,12 +92,32 @@ function displayData(timeFrame) {
 
     // console.log(activity.title)
 
+    let previousLabel;
+    switch (timeFrame) {
+      case "daily":
+        previousLabel = "Last Day";
+        break;
+      case "weekly":
+        previousLabel = "Last Week";
+        break;
+      case "monthly":
+        previousLabel = "Last Month";
+        break;
+    }
+
     const previousHours = document.createElement("p");
-    previousHours.textContent = `Last: ${activity[timeFrame].previous}hrs`;
+    previousHours.textContent = `${previousLabel} ${activity[timeFrame].previous}hrs`;
     previousHours.classList.add("previous-hours");
     targetContainer.appendChild(previousHours);
-    const currprevhours = document.createElement("div");
-    currprevhours.classList.add("title-dots");
+
+    const hoursContainer = document.createElement("div");
+    hoursContainer.classList.add("hours-container");
+    hoursContainer.append(previousHours, currentHours);
+    targetContainer.append(hoursContainer);
+
+    // const hoursContainer = document.createElement("div");
+    // hoursContainer.classList.add("hours-container");
+    // hoursContainer.append("previous-hours, current-hours");
   });
 }
 
