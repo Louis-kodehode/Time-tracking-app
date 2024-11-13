@@ -36,3 +36,72 @@ const activities = [
     monthly: { current: 7, previous: 11 },
   },
 ];
+
+const daily = document.querySelector("#daily");
+const weekly = document.querySelector("#weekly");
+const monhtly = document.querySelector("#monthly");
+
+const work = document.querySelector(".work");
+const play = document.querySelector(".play");
+const study = document.querySelector(".study");
+const exercise = document.querySelector(".exercise");
+const social = document.querySelector(".social");
+const selfcare = document.querySelector(".selfcare");
+
+function displayData(timeFrame) {
+  activities.forEach((activity) => {
+    let targetContainer;
+    switch (activity.title) {
+      case "Work":
+        targetContainer = work;
+        break;
+      case "Play":
+        targetContainer = play;
+        break;
+      case "Study":
+        targetContainer = study;
+        break;
+      case "Exercise":
+        targetContainer = exercise;
+        break;
+      case "Social":
+        targetContainer = social;
+        break;
+      case "Self Care":
+        targetContainer = selfcare;
+        break;
+    }
+
+    targetContainer.textContent = "";
+
+    const title = document.createElement("p");
+    const dots = document.createElement("img");
+    const titleDots = document.createElement("div");
+    titleDots.classList.add("title-dots");
+    dots.src = "./images/icon-ellipsis.svg";
+    title.textContent = activity.title;
+    title.classList.add("activity-title");
+    titleDots.append(title, dots);
+    targetContainer.append(titleDots);
+
+    const currentHours = document.createElement("p");
+    currentHours.textContent = `${activity[timeFrame].current}hrs`;
+    currentHours.classList.add("current-hours");
+    targetContainer.appendChild(currentHours);
+
+    // console.log(activity.title)
+
+    const previousHours = document.createElement("p");
+    previousHours.textContent = `Last: ${activity[timeFrame].previous}hrs`;
+    previousHours.classList.add("previous-hours");
+    targetContainer.appendChild(previousHours);
+    const currprevhours = document.createElement("div");
+    currprevhours.classList.add("title-dots");
+  });
+}
+
+daily.addEventListener("click", () => displayData("daily"));
+weekly.addEventListener("click", () => displayData("weekly"));
+monthly.addEventListener("click", () => displayData("monthly"));
+
+displayData("weekly");

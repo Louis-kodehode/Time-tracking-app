@@ -37,3 +37,5 @@ The designs were created to the following widths:
 
 - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
 - Weights: 300, 400, 500
+
+icon ellipsis = ...

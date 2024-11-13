@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Tracker</title>
   </head>
   <body>
-    <!-- HTML Goes here! -->
+    <div class="grid">
+      <div class="profile-name">
+        <div class="profile-dates">
+          <img
+            class="profile-img"
+            src="images/image-jeremy.png"
+            alt="picture of a man"
+          />
+          <div class="profile-text">
+            <p>report for</p>
+            <h3>Jeremy Robson</h3>
+          </div>
+        </div>
+
+        <div id="titleDots"></div>
+
+        <div class="button">
+          <button id="daily">Daily</button>
+          <button id="weekly">Weekly</button>
+          <button id="monthly">Monthly</button>
+        </div>
+      </div>
+      <div class="work-bck grid-reverse">
+        <div class="work small-textbox"></div>
+      </div>
+      <div class="play-bck grid-reverse">
+        <div class="play small-textbox"></div>
+      </div>
+      <div class="study-bck grid-reverse">
+        <div class="study small-textbox"></div>
+      </div>
+      <div class="exercise-bck grid-reverse">
+        <div class="exercise small-textbox"></div>
+      </div>
+      <div class="social-bck grid-reverse">
+        <div class="social small-textbox"></div>
+      </div>
+      <div class="selfcare-bck grid-reverse">
+        <div class="selfcare small-textbox"></div>
+      </div>
+    </div>
   </body>
 </html>
